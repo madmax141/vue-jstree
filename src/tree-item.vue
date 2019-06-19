@@ -17,7 +17,7 @@
                 <span v-html="model[textFieldName]"></span>
             </slot>
         </div>
-        <ul role="group" ref="group" class="tree-children" v-if="isFolder" :style="groupStyle">
+        <ul role="group" ref="group" class="tree-children" v-if="isFolder && model.opened" :style="groupStyle">
             <tree-item v-for="(child, index) in model[childrenFieldName]"
                        :key="index"
                        :data="child"
